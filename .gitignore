@@ -1,0 +1,33 @@
+# Static files
+kiratech/staticfiles/
+kiratech/static/
+kiratech/media/
+
+# But keep your source static files
+!/kiratech/static/images/
+!/kiratech/static/css/
+!/kiratech/static/js/
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Virtual Environment
+venv/
+env/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db 
