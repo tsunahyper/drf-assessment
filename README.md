@@ -9,10 +9,10 @@ A Django-based inventory management system with REST API support.
 ## Setup Instructions
 
 ### 1. Clone the Repository
-First, clone the repository to your local machine:
+First, clone the repository on the local machine:
 
 ```bash
-git clone https://github.com/your-username/drf-assessment.git
+git clone https://github.com/<github-username>/drf-assessment.git
 cd kiratech
 ```
 
@@ -36,13 +36,52 @@ python manage.py runserver
 
 ### 5. Access the Application
 
-Open your web browser and navigate to `http://127.0.0.1:8000/inventory/`.
+Open the web browser and navigate to `http://127.0.0.1:8000/inventory/`.
 
-### 6. Test the API
+## Step 4: Database Setup
+
+Set up the database and create an admin user:
+
+```bash
+# Run migrations to create database tables
+python manage.py migrate
+
+# Create superuser for admin access
+python manage.py createsuperuser
+# Follow the prompts to create admin credentials
+```
+
+### Initial Data Setup
+
+After setting up the database, create some initial data:
+
+1. Access the admin interface at `http://127.0.0.1:8000/admin/`
+2. Login with the superuser credentials
+3. Create initial data:
+   - First, create a Supplier:
+     - Click on "Suppliers"
+     - Click "Add Supplier"
+     - Fill in the supplier name
+     - Click "Save"
+   - Then, create an Inventory item:
+     - Click on "Inventories"
+     - Click "Add Inventory"
+     - Fill in the required fields:
+       - Inventory name
+       - Description
+       - Note
+       - Stock quantity
+       - Availability
+       - Select the supplier created
+     - Click "Save"
+
+The SQLite database file (`db.sqlite3`) will be automatically created in the project directory.
+
+### 7. Test the API
 
 Test the API endpoints using tools like `curl` or `Postman`.
 
-### 7. Test the Application
+### 8. Test the Application
 
 Test the application using the test cases in the `tests.py` file.
 
@@ -90,8 +129,3 @@ Common Issues:
 - **Admin Access Issues**: Verify superuser credentials
 
 ---
-
-
-
-
-
