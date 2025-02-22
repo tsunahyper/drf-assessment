@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ inventory.inventory_name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="inventory-detail">
+        <div class="image-container">
+            <img src="{% static 'images/inventory.jpg' %}" alt="{{ inventory.inventory_name }}" class="inventory-image">
+        </div>
+        
+        <div class="details">
+            <strong>Inventory Name:</strong>
+            <p>{{ inventory.inventory_name }}</p>
+            
+            <div class="detail-row">
+                <strong>Description:</strong>
+                <p>{{ inventory.inventory_description }}</p>
+            </div>
+            
+            <div class="detail-row">
+                <strong>Supplier:</strong>
+                <p>{{ inventory.supplier_name }}</p>
+            </div>
+            
+            <div class="detail-row">
+                <strong>Stock:</strong>
+                <p>{{ inventory.inventory_stock }}</p>
+            </div>
+            
+            <div class="detail-row">
+                <strong>Availability:</strong>
+                <p>{{ inventory.inventory_availability }}</p>
+            </div>
+            
+            <div class="detail-row">
+                <strong>Note:</strong>
+                <p>{{ inventory.inventory_note }}</p>
+            </div>
+            
+            <a href="/inventory/" class="back-button">Back to List</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .inventory-detail {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .image-container {
+        flex: 0 0 300px;
+        max-width: 300px;
+    }
+    
+    .image-container img.inventory-image {
+        width: 10%;
+        height: auto;
+        max-width: 15px;
+        object-fit: contain;
+        display: block;
+    }
+    
+    .details {
+        flex: 1;
+    }
+    
+    .detail-row {
+        margin-bottom: 1rem;
+    }
+    
+    .detail-row strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #666;
+    }
+    
+    .back-button {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    
+    .back-button:hover {
+        background-color: #0056b3;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}

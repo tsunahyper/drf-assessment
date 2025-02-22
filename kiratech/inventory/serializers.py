@@ -4,12 +4,13 @@ from .models import Inventory, Supplier
 class SupplierSerializer(serializers.ModelSerializer):
     class Meta:
         model = Supplier
-        fields = ['id', 'name']
+        fields = ['supplier_id', 'supplier_name']
 
 class InventorySerializer(serializers.ModelSerializer):
-    supplier_name = serializers.CharField(source='supplier.name', read_only=True)
+    supplier_name = serializers.CharField(source='inventory_supplier.supplier_name', read_only=True)
 
     class Meta:
         model = Inventory
-        fields = ['id', 'name', 'description', 'note', 'stock', 
-                 'availability', 'supplier', 'supplier_name']
+        fields = ['inventory_id', 'inventory_name', 'inventory_description', 
+                 'inventory_note', 'inventory_stock', 'inventory_availability', 
+                 'inventory_supplier', 'supplier_name']

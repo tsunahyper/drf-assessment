@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Inventory List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Inventory List</h1>
+    <br/>
+
+    <!-- Search Form -->
+    <div class="search-container">
+        <form method="get" action="{% url 'inventory-list' %}">
+            <input type="text" 
+                   name="search" 
+                   placeholder="Search by name..."
+                   value="{{ search_query }}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <br/>
+
+    <!-- Inventory List -->
+    <div class="inventory-list">
+        {% if inventories %}
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Supplier</th>
+                        <th>Availability</th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    {% for inventory in inventories %}
+                        <tr>
+                            <td>
+                                <a href="{{ inventory.detail_url }}">
+                                    {{ inventory.inventory_name }}
+                                </a>
+                            </td>
+                            <td>{{ inventory.supplier_name }}</td>
+                            <td>{{ inventory.inventory_availability }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No inventories found.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .search-container {
+        margin-bottom: 2rem;
+    }
+    
+    .search-container input {
+        padding: 0.5rem;
+        width: 300px;
+        margin-right: 1rem;
+    }
+    
+    .search-container button {
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .inventory-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+    }
+    
+    .inventory-table th,
+    .inventory-table td {
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .inventory-table th {
+        background-color: #f5f5f5;
+        font-weight: bold;
+    }
+    
+    .inventory-table tr:hover {
+        background-color: #f9f9f9;
+    }
+</style>
+{% endblock %}
