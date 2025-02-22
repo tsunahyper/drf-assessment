@@ -22,23 +22,7 @@ cd kiratech
 pip install -r requirements.txt
 ```
 
-### 3. Run Migrations
-
-```bash
-python manage.py migrate
-```
-
-### 4. Run the Development Server
-
-```bash
-python manage.py runserver
-```
-
-### 5. Access the Application
-
-Open the web browser and navigate to `http://127.0.0.1:8000/inventory/`.
-
-## Step 4: Database Setup
+## Step 3: Database Setup
 
 Set up the database and create an admin user:
 
@@ -77,11 +61,23 @@ After setting up the database, create some initial data:
 
 The SQLite database file (`db.sqlite3`) will be automatically created in the project directory.
 
-### 7. Test the API
+
+### 4. Run the Development Server
+
+```bash
+python manage.py runserver
+```
+
+### 5. Access the Application
+
+Open the web browser and navigate to `http://127.0.0.1:8000/inventory/`.
+
+
+### 6. Test the API
 
 Test the API endpoints using tools like `curl` or `Postman`.
 
-### 8. Test the Application
+### 7. Test the Application
 
 Test the application using the test cases in the `tests.py` file.
 
