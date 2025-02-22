@@ -35,7 +35,7 @@
                     {% for inventory in inventories %}
                         <tr>
                             <td>
-                                <a href="{{ inventory.detail_url }}">
+                                <a href="/inventory/detail/{{ inventory.inventory_id }}">
                                     {{ inventory.inventory_name }}
                                 </a>
                             </td>

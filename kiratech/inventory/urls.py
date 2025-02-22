@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from inventory.views import InventoryViewSet, InventoryListView, InventoryDetailView
 
 router = DefaultRouter()
-router.register(r"", InventoryViewSet, basename="inventory")
+router.register(r"inventory", InventoryViewSet, basename="inventory")
 
 urlpatterns = [
     # Template views - these handle /inventory/ routes
