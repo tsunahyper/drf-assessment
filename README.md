@@ -12,8 +12,8 @@ A Django-based inventory management system with REST API support.
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/kiratech-inventory-system.git
-cd kiratech-inventory-system
+git clone https://github.com/your-username/drf-assessment.git
+cd kiratech
 ```
 
 ### 2. Install Dependencies
@@ -40,31 +40,16 @@ Open your web browser and navigate to `http://127.0.0.1:8000/inventory/`.
 
 ### 6. Test the API
 
-You can test the API endpoints using tools like `curl` or `Postman`.
+Test the API endpoints using tools like `curl` or `Postman`.
 
 ### 7. Test the Application
 
-You can test the application using the test cases in the `tests.py` file.
+Test the application using the test cases in the `tests.py` file.
 
 ```bash
 python manage.py test
 ```
 
-### 8. Test the Admin Page
-
-You can test the admin page using the test cases in the `tests.py` file.
-
-```bash
-python manage.py test
-```
-
-### 9. Test the Admin Page
-
-You can test the admin page using the test cases in the `tests.py` file.
-
-```bash
-python manage.py test
-```
 
 ## Available Endpoints
 
