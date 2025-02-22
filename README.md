@@ -22,7 +22,7 @@ cd kiratech
 pip install -r requirements.txt
 ```
 
-## Step 3: Database Setup
+### 3. Database Setup
 
 Set up the database and create an admin user:
 
