@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="inventory-detail">
+    <h1>{{ item.name }}</h1>
+    <img src="{{ item.image.url|default:'/static/placeholder.jpg' }}" alt="{{ item.name }}">
+    <p><strong>Description:</strong> {{ item.description }}</p>
+    <p><strong>Note:</strong> {{ item.note }}</p>
+    <p><strong>Stock:</strong> {{ item.stock }}</p>
+    <p><strong>Supplier:</strong> {{ item.supplier.name }}</p>
+    <p><strong>Available:</strong> {{ item.availability|yesno:"Yes,No" }}</p>
+</div>
+{% endblock %}

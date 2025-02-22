@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Inventory List</h1>
+<div class="inventory-list">
+    {% for item in inventories %}
+    <div class="inventory-item">
+        <h2>{{ item.name }}</h2>
+        <p>Supplier: {{ item.supplier.name }}</p>
+        <p>Available: {{ item.availability|yesno:"Yes,No" }}</p>
+        <a href="{% url 'inventory_detail' item.id %}">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
