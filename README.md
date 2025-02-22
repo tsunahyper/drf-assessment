@@ -12,7 +12,7 @@ A Django-based inventory management system with REST API support.
 First, clone the repository on the local machine:
 
 ```bash
-git clone https://github.com/<github-username>/drf-assessment.git
+git clone https://github.com/tsunahyper/drf-assessment.git
 cd kiratech
 ```
 
